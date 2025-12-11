@@ -1,0 +1,103 @@
+# DQDA Configuration
+
+analysis:
+  # Component weights in overall score calculation
+  founder_weight: 0.25
+  market_weight: 0.25
+  competition_weight: 0.15
+  tokenomics_weight: 0.15
+  technical_weight: 0.15
+  investor_fit_weight: 0.05
+
+scoring:
+  # Score thresholds
+  excellent_threshold: 80
+  good_threshold: 65
+  acceptable_threshold: 50
+  poor_threshold: 35
+
+# Founder readiness scoring
+founder_analysis:
+  experience_weight: 0.25
+  track_record_weight: 0.35
+  execution_weight: 0.30
+  team_weight: 0.10
+  
+  experience:
+    senior_role_boost: 10
+    domain_expertise_boost: 15
+    per_year_of_experience: 2
+  
+  track_record:
+    exit_boost: 30
+    profitable_exit_boost: 20
+    per_achievement: 2
+
+# Market analysis
+market_analysis:
+  tam_sizing:
+    excellent_minimum: 100_000_000
+    good_minimum: 10_000_000
+    acceptable_minimum: 1_000_000
+  
+  growth:
+    high_growth_threshold: 30
+    moderate_growth_threshold: 15
+
+# Competition analysis
+competition_analysis:
+  direct_competitor_thresholds:
+    monopoly: 0
+    emerging: 1
+    growing: 2
+    mature: 5
+  
+  threat_assessment:
+    big_tech_competitors:
+      - amazon
+      - google
+      - microsoft
+      - apple
+      - facebook
+
+# Tokenomics analysis
+tokenomics_analysis:
+  distribution:
+    ideal_community_minimum: 20
+    ideal_team_maximum: 30
+    ideal_investor_maximum: 40
+  
+  vesting:
+    ideal_team_vesting_months: 24
+    ideal_minimum_lock_months: 12
+
+# Technical assessment
+technical_analysis:
+  outdated_technologies:
+    - flash
+    - silverlight
+    - python2
+    - asp.net classic
+  
+  critical_security_concerns:
+    - unencrypted
+    - no authentication
+    - sql injection risk
+    - privilege escalation
+
+# Extractors
+extractors:
+  pdf_timeout_seconds: 30
+  max_file_size_mb: 50
+  supported_formats:
+    - pdf
+    - txt
+    - docx
+    - md
+
+# LLM Configuration
+llm:
+  provider: openai
+  model: gpt-4
+  temperature: 0.3
+  max_tokens: 2000
